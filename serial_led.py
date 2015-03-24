@@ -28,7 +28,10 @@ signals = {
 try:
     status = signals[argv[1]]
 except:
-    status = signals["unknown"]
+    try:
+        status = int(argv[1])
+    except:
+        status = signals["unknown"]
 
 # If you change light_offset here, change it in the Arduino code too
 light_offset = 10
