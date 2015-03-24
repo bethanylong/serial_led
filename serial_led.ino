@@ -66,7 +66,7 @@ void setup() {
 //     1 -> WARN on light 0
 //     12 -> CRIT on light 1
 //     15 -> UNKNOWN on light 1
-//     20 -> no-op
+//     20 -> no-op (if no light 2 exists)
 void loop() {
     if (Serial.available()) {
         char received = Serial.read();
@@ -80,7 +80,7 @@ void loop() {
             yellow(light);
         } else if (received % light_offset == 2) { // CRIT: red
             red(light);
-        } else if (received % light_offset == 3) { // off
+        } else if (received % light_offset == 4) { // off
             off(light);
         } else { // UNKNOWN: blue
             blue(light);

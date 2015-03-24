@@ -21,8 +21,8 @@ signals = {
     "ok": 0,
     "warn": 1,
     "crit": 2,
-    "off": 3,
-    "unknown": 4
+    "unknown": 3,
+    "off": 4
 }
 
 try:
